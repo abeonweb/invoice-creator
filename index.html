@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Invoice Creator</title>
+        <meta name="author" content="Abiodun Oke">
+        <meta name="description" content="scrimba design of an invoice creator">
+        <link href="css/index.css" rel="stylesheet">
+        <script src="js/index.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <h1 class="title">Invoice creator</h1>
+            <p class="intro">Thanks for choosing GoodCorp, LLC!</p>
+        </header>
+        <main>
+            <div class="task-btn-container">
+                <button id="wash-btn" value="Wash Car" class="task-btn">Wash Car: $10</button>
+                <button id="mow-btn" value="Mow Lawn" class="task-btn">Mow Lawn: $20</button>
+                <button id="pull-btn" value="Pull Weeds" class="task-btn">Pull Weeds: $30</button>
+            </div>
+            <div class="task-list-container">
+                <div class="task-list">
+                    <h2 class="section-title">TASK</h2>
+                    <ul id="ul-el"></ul>
+                </div>
+                <div class="amount-list">
+                    <h2 class="section-title">TOTAL</h2>
+                    <ul id="amount-el"></ul>
+                </div>
+            </div>
+            <div class="notes-total-container">
+                <div class="notes">
+                    <h2 class="section-title">NOTES</h2>
+                    <textarea rows="5" cols="45"></textarea>
+                </div>
+                <div class="totalAmount">
+                    <h2 class="section-title">TOTAL AMOUNT</h2>
+                    <section id="total-el">$0</section>
+                </div>
+            </div>
+            <button id="send-btn"><span><img class="env-img" src="images/envelope.png"></span> Send invoice</button>
+        </main>
+        <div class="close">X</div>
+    </body>
+</html>

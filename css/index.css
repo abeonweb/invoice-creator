@@ -1,0 +1,170 @@
+html, body {
+    margin:0;
+    padding:0;
+    background-color: #1c1c1c;
+    position: relative;
+    
+}
+
+/*********
+TYPOGRAPHY
+**********/
+body{
+    font-family: Inter, sans-serif;
+}
+
+h1{
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -2%;
+    margin:0;
+}
+
+.section-title{
+    font-size: 12px;
+    font-weight: 700;
+    color:#918E9B;
+    margin-bottom: 16px;
+
+}
+
+header p{
+    color:#2B283A;
+    font-size: 16px;
+    line-height: 28px;
+    margin-top: 0;
+
+
+}
+
+
+/*********
+LAYOUT
+**********/
+header{
+    background: #F5F5F5;
+    padding: 59px 98px 51px;
+    text-align:center;
+    width: 550px;
+    margin: 50px auto 0;
+    box-sizing: border-box;
+}
+
+main {
+    width: 550px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    padding: 0 40px 55px;
+    box-sizing: border-box;
+}
+
+.task-btn-container,.task-list-container,
+.notes-total-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-btn-container{
+    padding: 37px 0 47px;
+}
+
+.task-btn{
+    font-size:14px;
+    line-height: 16px;
+    padding: 15px 18px;
+    border: solid 1px #D5D4D8;
+    border-radius: 7px;
+}
+
+.task-list-container{
+    min-height: 150px;
+    border-bottom: 1px solid #C3C6DB;
+}
+
+.task-list{
+    min-width: 300px;
+}
+
+#ul-el {
+    padding:0;
+}
+
+.list-item{
+    color:#4A4E74;
+    font-size: 20px;
+    font-weight: 700;
+    list-style: none;
+    margin-bottom: 24px;
+}
+
+.remove{
+    color:#918E9B;
+    font-size: 8px;
+    font-weight: 400;
+    border: none;
+    background: none;
+    margin-left: 10px;
+}
+
+.amount-item {
+    color:#918E9B;
+    font-size: 24px;
+    list-style: none;
+    line-height: 22px;
+    margin-bottom: 24px;
+}
+/* ---------------------------------------- */
+.amount-list{
+    min-width: 100px;
+    text-align: right;
+    font-weight: 500;
+}
+
+#total-el {
+    text-align: right;
+    color: #4A4E74;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.notes-total-container{
+    min-height: 90px;
+}
+
+#send-btn {
+    background-color: #3770ED;
+    color: #FFF;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    padding: 16px 172px;
+    margin-top: 10px;
+}
+
+.env-img{
+    width: 16px;
+    height: 12px;
+    margin-right: 10px;
+}
+
+textarea {
+    border: none;
+    font-family: Inter;
+    min-height: 100px;
+    min-width: 300px;
+    padding: 10px;
+}
+
+.close {
+    border: solid 2px #FFFFFF;
+    color: #FFFFFF;
+    font-size: 20px;
+    width: 24px;
+    padding: 5px;
+    border-radius: 50%;
+    position: fixed;
+    top: 20px;
+    right: 140px;
+    text-align: center;
+    cursor: pointer;
+}
