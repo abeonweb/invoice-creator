@@ -4,31 +4,33 @@
         <title>Invoice Creator</title>
         <meta name="author" content="Abiodun Oke">
         <meta name="description" content="scrimba design of an invoice creator">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/index.css" rel="stylesheet">
         <script src="js/index.js" defer></script>
     </head>
     <body>
         <header>
             <h1 class="title">Invoice creator</h1>
-            <p class="intro">Thanks for choosing GoodCorp, LLC!</p>
+            <p class="intro">Thank you for choosing GoodCorp, LLC!</p>
+            <div class="close">X</div>
         </header>
         <main>
-            <div class="task-btn-container">
-                <button id="wash-btn" value="Wash Car" class="task-btn">Wash Car: $10</button>
-                <button id="mow-btn" value="Mow Lawn" class="task-btn">Mow Lawn: $20</button>
-                <button id="pull-btn" value="Pull Weeds" class="task-btn">Pull Weeds: $30</button>
+            <div class="container task-btn-container">
+                <button value="Wash Car" data-amount=10 class="task-btn">Wash Car: $10</button>
+                <button value="Mow Lawn" data-amount=20 class="task-btn">Mow Lawn: $20</button>
+                <button value="Pull Weeds" data-amount=30 class="task-btn">Pull Weeds: $30</button>
             </div>
-            <div class="task-list-container">
+            <div class="container task-list-container">
                 <div class="task-list">
                     <h2 class="section-title">TASK</h2>
-                    <ul id="ul-el"></ul>
+                    <ul id="list-el"></ul>
                 </div>
                 <div class="amount-list">
-                    <h2 class="section-title">TOTAL</h2>
+                    <h2 class="section-title">COST</h2>
                     <ul id="amount-el"></ul>
                 </div>
             </div>
-            <div class="notes-total-container">
+            <div class="container notes-total-container">
                 <div class="notes">
                     <h2 class="section-title">NOTES</h2>
                     <textarea rows="5" cols="45"></textarea>
@@ -39,7 +41,8 @@
                 </div>
             </div>
             <button id="send-btn"><span><img class="env-img" src="images/envelope.png"></span> Send invoice</button>
+            
+
         </main>
-        <div class="close">X</div>
     </body>
 </html>
