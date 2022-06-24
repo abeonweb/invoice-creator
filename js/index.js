@@ -1,47 +1,24 @@
-const washBtn = document.getElementById("wash-btn")
-const mowBtn = document.getElementById("mow-btn")
-const pullBtn = document.getElementById("pull-btn")
+const taskBtns = document.querySelectorAll(".task-btn")
 const sendBtn = document.getElementById("send-btn")
-
-const ulEl = document.getElementById("ul-el")
+const pageClose= document.querySelector(".close")
+const listEl = document.getElementById("list-el")
 const amountEl = document.getElementById("amount-el")
 const totalEl = document.getElementById("total-el")
 
 let list = []
 let amountList =[]
 
-washBtn.addEventListener("click", function () {
+function addToInvoice() {
     //check if array contains value, add string to array
     //add amount to array
     let value = this.value
-    const amount = 10
+    const amount = parseInt(this.dataset.amount)
     if(list.indexOf(value) === -1){
         list.push(value)
         amountList.push(amount)
     }
     render()
-})
-
-mowBtn.addEventListener("click", function () {
-    let value = this.value
-    const amount = 20
-    if(list.indexOf(value) === -1){
-        list.push(value)
-        amountList.push(amount)
-    }
-    render()
-})
-
-pullBtn.addEventListener("click", function () {
-
-    let value = this.value
-    const amount = 30
-    if(list.indexOf(value) === -1){
-        list.push(value)
-        amountList.push(amount)
-    }
-    render()
-})
+}
 
 /*
 *a list of tasks and corresponding amounts
@@ -50,39 +27,30 @@ pullBtn.addEventListener("click", function () {
 *insert innerHTML of ul element
 */
 function render() {
-    
     let listItems = ""
     let amountItems = ""
     let total = 0
     for(let i=0;i<list.length;i++){
-        listItems += `<li class="list-item">
-                        ${list[i]}
-                        <button class="remove" value="${list[i]}" onclick="removeTask(this.value)">Remove</button>
-                    </li>`
+        listItems += `
+        <li class="list-item">
+            ${list[i]}
+            <button class="remove" value="${list[i]}" onclick="removeTask(this.value)">Remove</button>
+        </li>`
+
         amountItems += `<li class="amount-item">$${amountList[i]}</li>` 
         total += amountList[i]
     }
-    ulEl.innerHTML = listItems
+    listEl.innerHTML = listItems
     amountEl.innerHTML = amountItems
     totalEl.innerHTML = `$${total}`
 }
 
 /**
- * clear the invoice
- * set list to [], render
- */
-sendBtn.addEventListener("click", function(){
-    list=[]
-    render()
-})
-
-/**
- * remove an element by passing this.value to the function right in the         onliclick
+ * remove an element by passing this.value to the function right in the onclick
  * making the value of the button the same as the list item
  * use that value to match and not include item in list
  */
 function removeTask(value){
-    
     let newList =[]
     let newAmountList =[]
     if(value){//not undefined, proceed to remove
@@ -99,7 +67,16 @@ function removeTask(value){
     }
 }
 
-const pageClose= document.querySelector(".close")
-pageClose.addEventListener("click", function(){
-    window.close()
-})
+/**
+ * clear the invoice
+ * set list, amountList to [], render
+ */
+function reset(){
+    list=[]
+    amountList=[]
+    render()
+}
+
+taskBtns.forEach(btn => btn.addEventListener("click", addToInvoice))
+sendBtn.addEventListener("click", reset)
+pageClose.addEventListener("click", reset)
